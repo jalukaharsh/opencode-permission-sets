@@ -1,0 +1,26 @@
+# git-local-write
+#
+# Local, reversible repository changes: staging, commits, renames, init, and ref management.
+# NOTE: `git branch *`, `git tag *` and `git remote *` also match their delete/modify forms.
+# Drop those three if you want a stricter set. There is deliberately NO rule for `git push`.
+
+- {action: shell, resource: "git add *", effect: allow}
+- {action: shell, resource: "git commit *", effect: allow}
+- {action: shell, resource: "git branch *", effect: allow}
+- {action: shell, resource: "git remote *", effect: allow}
+- {action: shell, resource: "git tag *", effect: allow}
+- {action: shell, resource: "git init", effect: allow}
+- {action: shell, resource: "git init *", effect: allow}
+- {action: shell, resource: "git -C * add *", effect: allow}
+- {action: shell, resource: "git -C * commit *", effect: allow}
+- {action: shell, resource: "git -C * branch *", effect: allow}
+- {action: shell, resource: "git -C * remote *", effect: allow}
+- {action: shell, resource: "git -C * tag *", effect: allow}
+- {action: shell, resource: "git -C * init", effect: allow}
+- {action: shell, resource: "git -C * init *", effect: allow}
+- {action: shell, resource: "git archive *", effect: allow}
+- {action: shell, resource: "git -C * archive *", effect: allow}
+- {action: shell, resource: "git mv *", effect: allow}
+- {action: shell, resource: "git -C * mv *", effect: allow}
+- {action: shell, resource: "git -c user.name=* commit *", effect: allow}
+- {action: shell, resource: "git -c user.name=* -c user.email=* commit *", effect: allow}

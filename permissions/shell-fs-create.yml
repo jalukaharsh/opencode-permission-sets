@@ -1,0 +1,8 @@
+# shell-fs-create
+#
+# Creating empty files and directories. Not read-only, but non-destructive.
+
+- {action: shell, resource: "mkdir", effect: allow}
+- {action: shell, resource: "mkdir *", effect: allow}
+- {action: shell, resource: "touch", effect: allow}
+- {action: shell, resource: "touch *", effect: allow}

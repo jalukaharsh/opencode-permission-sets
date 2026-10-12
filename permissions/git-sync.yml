@@ -1,0 +1,11 @@
+# git-sync
+#
+# Moves data from remotes into the local repo. `git pull` can modify the working tree;
+# `git clone` / `gh repo clone` create new directories. Never pushes.
+
+- {action: shell, resource: "git fetch *", effect: allow}
+- {action: shell, resource: "git pull *", effect: allow}
+- {action: shell, resource: "git -C * fetch *", effect: allow}
+- {action: shell, resource: "git -C * pull *", effect: allow}
+- {action: shell, resource: "git clone *", effect: allow}
+- {action: shell, resource: "gh repo clone *", effect: allow}

@@ -1,0 +1,6 @@
+# github-readonly
+#
+# Read-only GitHub CLI queries. `gh api` is intentionally absent: with -f/-X it can write.
+
+- {action: shell, resource: "gh repo list *", effect: allow}
+- {action: shell, resource: "gh repo view *", effect: allow}

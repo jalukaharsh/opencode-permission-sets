@@ -1,0 +1,9 @@
+# shell-file-inspection
+#
+# Read-only inspection of PDFs, archives and binary equality.
+
+- {action: shell, resource: "pdftotext *", effect: allow}
+- {action: shell, resource: "pdfinfo *", effect: allow}
+- {action: shell, resource: "unzip -l *", effect: allow}
+- {action: shell, resource: "zipinfo *", effect: allow}
+- {action: shell, resource: "cmp *", effect: allow}

@@ -1,0 +1,32 @@
+# shell-hardening
+#
+# Deny rules. Include this set LAST: the last matching rule wins, so these must follow the
+# allow sets above (e.g. shell-readonly allows `find *`, this denies `find * -exec*`).
+
+- {action: shell, resource: "git add .env*", effect: deny}
+- {action: shell, resource: "git -C * add .env*", effect: deny}
+- {action: shell, resource: "rm -rf *", effect: deny}
+- {action: shell, resource: "rm -fr *", effect: deny}
+- {action: shell, resource: "rm -f *", effect: deny}
+- {action: shell, resource: "rm -r *", effect: deny}
+- {action: shell, resource: "sudo *", effect: deny}
+- {action: shell, resource: "dd *", effect: deny}
+- {action: shell, resource: "mkfs *", effect: deny}
+- {action: shell, resource: "shutdown *", effect: deny}
+- {action: shell, resource: "reboot", effect: deny}
+- {action: shell, resource: "git reset --hard *", effect: deny}
+- {action: shell, resource: "git clean -f*", effect: deny}
+- {action: shell, resource: "curl *|sh", effect: deny}
+- {action: shell, resource: "curl *|sudo sh", effect: deny}
+- {action: shell, resource: "wget *|sh", effect: deny}
+- {action: shell, resource: "sed -i*", effect: deny}
+- {action: shell, resource: "sort -o*", effect: deny}
+- {action: shell, resource: "find * -delete*", effect: deny}
+- {action: shell, resource: "find * -exec*", effect: deny}
+- {action: shell, resource: "find * -execdir*", effect: deny}
+- {action: shell, resource: "find * -ok*", effect: deny}
+- {action: shell, resource: "find * -fprint*", effect: deny}
+- {action: shell, resource: "find * -fls*", effect: deny}
+- {action: shell, resource: "tee *", effect: deny}
+- {action: shell, resource: "echo * > *", effect: deny}
+- {action: shell, resource: "echo * >> *", effect: deny}

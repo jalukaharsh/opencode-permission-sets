@@ -1,0 +1,72 @@
+# shell-readonly
+#
+# Read-only inspection commands. Safe to run without a prompt.
+# NOTE: `find` is allowed here, so include shell-hardening AFTER this set to deny
+# -delete/-exec and friends. `echo`/`printf` are allowed; redirects are denied by hardening.
+
+- {action: shell, resource: "cat", effect: allow}
+- {action: shell, resource: "cat *", effect: allow}
+- {action: shell, resource: "less", effect: allow}
+- {action: shell, resource: "less *", effect: allow}
+- {action: shell, resource: "man", effect: allow}
+- {action: shell, resource: "man *", effect: allow}
+- {action: shell, resource: "ls", effect: allow}
+- {action: shell, resource: "ls *", effect: allow}
+- {action: shell, resource: "pwd", effect: allow}
+- {action: shell, resource: "which", effect: allow}
+- {action: shell, resource: "which *", effect: allow}
+- {action: shell, resource: "ps", effect: allow}
+- {action: shell, resource: "ps *", effect: allow}
+- {action: shell, resource: "echo", effect: allow}
+- {action: shell, resource: "echo *", effect: allow}
+- {action: shell, resource: "printf", effect: allow}
+- {action: shell, resource: "printf *", effect: allow}
+- {action: shell, resource: "head", effect: allow}
+- {action: shell, resource: "head *", effect: allow}
+- {action: shell, resource: "tail", effect: allow}
+- {action: shell, resource: "tail *", effect: allow}
+- {action: shell, resource: "sort", effect: allow}
+- {action: shell, resource: "sort *", effect: allow}
+- {action: shell, resource: "uniq", effect: allow}
+- {action: shell, resource: "uniq *", effect: allow}
+- {action: shell, resource: "wc", effect: allow}
+- {action: shell, resource: "wc *", effect: allow}
+- {action: shell, resource: "cut", effect: allow}
+- {action: shell, resource: "cut *", effect: allow}
+- {action: shell, resource: "tr", effect: allow}
+- {action: shell, resource: "tr *", effect: allow}
+- {action: shell, resource: "grep", effect: allow}
+- {action: shell, resource: "grep *", effect: allow}
+- {action: shell, resource: "find", effect: allow}
+- {action: shell, resource: "find *", effect: allow}
+- {action: shell, resource: "stat", effect: allow}
+- {action: shell, resource: "stat *", effect: allow}
+- {action: shell, resource: "du", effect: allow}
+- {action: shell, resource: "du *", effect: allow}
+- {action: shell, resource: "df", effect: allow}
+- {action: shell, resource: "df *", effect: allow}
+- {action: shell, resource: "basename", effect: allow}
+- {action: shell, resource: "basename *", effect: allow}
+- {action: shell, resource: "dirname", effect: allow}
+- {action: shell, resource: "dirname *", effect: allow}
+- {action: shell, resource: "realpath", effect: allow}
+- {action: shell, resource: "realpath *", effect: allow}
+- {action: shell, resource: "tree", effect: allow}
+- {action: shell, resource: "tree *", effect: allow}
+- {action: shell, resource: "file", effect: allow}
+- {action: shell, resource: "file *", effect: allow}
+- {action: shell, resource: "diff *", effect: allow}
+- {action: shell, resource: "comm *", effect: allow}
+- {action: shell, resource: "jq *", effect: allow}
+- {action: shell, resource: "readlink *", effect: allow}
+- {action: shell, resource: "whoami", effect: allow}
+- {action: shell, resource: "id", effect: allow}
+- {action: shell, resource: "date", effect: allow}
+- {action: shell, resource: "date *", effect: allow}
+- {action: shell, resource: "hostname", effect: allow}
+- {action: shell, resource: "uname", effect: allow}
+- {action: shell, resource: "uname *", effect: allow}
+- {action: shell, resource: "sha256sum", effect: allow}
+- {action: shell, resource: "sha256sum *", effect: allow}
+- {action: shell, resource: "md5sum", effect: allow}
+- {action: shell, resource: "md5sum *", effect: allow}

@@ -1,0 +1,5 @@
+# opencode-readonly
+#
+# Read-only queries to the local OpenCode API (e.g. `opencode api get /api/agent`).
+
+- {action: shell, resource: "opencode api get *", effect: allow}

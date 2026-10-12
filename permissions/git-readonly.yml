@@ -1,0 +1,60 @@
+# git-readonly
+#
+# Read-only git inspection, including `git -C <path>` variants.
+# Includes plumbing (rev-list, cat-file, ...), config reads and remote queries (ls-remote).
+# There is deliberately NO rule for `git push` anywhere in this repository, allow or deny:
+# every push should always prompt.
+
+- {action: shell, resource: "git status", effect: allow}
+- {action: shell, resource: "git status *", effect: allow}
+- {action: shell, resource: "git diff *", effect: allow}
+- {action: shell, resource: "git log *", effect: allow}
+- {action: shell, resource: "git show *", effect: allow}
+- {action: shell, resource: "git ls-files", effect: allow}
+- {action: shell, resource: "git ls-files *", effect: allow}
+- {action: shell, resource: "git rev-parse *", effect: allow}
+- {action: shell, resource: "git grep *", effect: allow}
+- {action: shell, resource: "git blame *", effect: allow}
+- {action: shell, resource: "git -C * status", effect: allow}
+- {action: shell, resource: "git -C * status *", effect: allow}
+- {action: shell, resource: "git -C * diff *", effect: allow}
+- {action: shell, resource: "git -C * log *", effect: allow}
+- {action: shell, resource: "git -C * show *", effect: allow}
+- {action: shell, resource: "git -C * ls-files", effect: allow}
+- {action: shell, resource: "git -C * ls-files *", effect: allow}
+- {action: shell, resource: "git -C * rev-parse *", effect: allow}
+- {action: shell, resource: "git -C * grep *", effect: allow}
+- {action: shell, resource: "git -C * blame *", effect: allow}
+- {action: shell, resource: "git for-each-ref *", effect: allow}
+- {action: shell, resource: "git -C * for-each-ref *", effect: allow}
+- {action: shell, resource: "git rev-list *", effect: allow}
+- {action: shell, resource: "git -C * rev-list *", effect: allow}
+- {action: shell, resource: "git merge-base *", effect: allow}
+- {action: shell, resource: "git -C * merge-base *", effect: allow}
+- {action: shell, resource: "git cat-file *", effect: allow}
+- {action: shell, resource: "git -C * cat-file *", effect: allow}
+- {action: shell, resource: "git count-objects *", effect: allow}
+- {action: shell, resource: "git -C * count-objects *", effect: allow}
+- {action: shell, resource: "git ls-tree *", effect: allow}
+- {action: shell, resource: "git -C * ls-tree *", effect: allow}
+- {action: shell, resource: "git check-ignore *", effect: allow}
+- {action: shell, resource: "git -C * check-ignore *", effect: allow}
+- {action: shell, resource: "git describe *", effect: allow}
+- {action: shell, resource: "git -C * describe *", effect: allow}
+- {action: shell, resource: "git shortlog *", effect: allow}
+- {action: shell, resource: "git -C * shortlog *", effect: allow}
+- {action: shell, resource: "git ls-remote *", effect: allow}
+- {action: shell, resource: "git -C * ls-remote *", effect: allow}
+- {action: shell, resource: "git config --get *", effect: allow}
+- {action: shell, resource: "git -C * config --get *", effect: allow}
+- {action: shell, resource: "git config --get-regexp *", effect: allow}
+- {action: shell, resource: "git -C * config --get-regexp *", effect: allow}
+- {action: shell, resource: "git config user.name", effect: allow}
+- {action: shell, resource: "git config user.email", effect: allow}
+- {action: shell, resource: "git stash list", effect: allow}
+- {action: shell, resource: "git stash list *", effect: allow}
+- {action: shell, resource: "git -C * stash list", effect: allow}
+- {action: shell, resource: "git bundle verify *", effect: allow}
+- {action: shell, resource: "git bundle list-heads *", effect: allow}
+- {action: shell, resource: "git worktree list", effect: allow}
+- {action: shell, resource: "git filter-repo --version", effect: allow}

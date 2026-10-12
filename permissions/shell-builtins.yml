@@ -1,0 +1,11 @@
+# shell-builtins
+#
+# Shell builtins and navigation that appear inside compound commands (`cd X && cmd`,
+# loops, conditionals). Each part of a compound command is matched separately.
+
+- {action: shell, resource: "cd", effect: allow}
+- {action: shell, resource: "cd *", effect: allow}
+- {action: shell, resource: "command -v *", effect: allow}
+- {action: shell, resource: "test *", effect: allow}
+- {action: shell, resource: "read *", effect: allow}
+- {action: shell, resource: "IFS= read *", effect: allow}
