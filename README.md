@@ -59,7 +59,7 @@ Rules use the V2 list format. `shell` rules are raw command text with `*` globs.
 | `git-readonly` | 53 | `status`, `diff`, `log`, `show`, plumbing, config reads, `ls-remote`, plus `git -C <path>` forms. |
 | `git-sync` | 6 | `fetch`, `pull`, `clone`, `gh repo clone`. Moves data in; never pushes. |
 | `git-local-write` | 20 | `add`, `commit`, `init`, `mv`, `branch`, `tag`, `remote`, `archive`. See the note below. |
-| `github-readonly` | 2 | `gh repo list`, `gh repo view`. `gh api` is deliberately absent. |
+| `github-readonly` | 19 | `gh` list/view/diff/checks/status for repos, PRs, issues, runs, workflows, releases, plus `gh search`. `gh api` and `gh auth status --show-token` are deliberately absent. |
 | `opencode-readonly` | 1 | `opencode api get *`. |
 | `external-directory-secrets` | 18 | Denies reads of `~/.ssh`, `~/.aws`, `~/.gnupg`, shell rc files, `.env`, tokens, ... |
 | `shell-hardening` | 27 | Denies `rm -r/-f`, `sudo`, `dd`, `mkfs`, `curl\|sh`, `sed -i`, `tee`, `find -exec/-delete`, redirects. **Include last.** |

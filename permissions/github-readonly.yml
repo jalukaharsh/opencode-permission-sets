@@ -1,6 +1,29 @@
 # github-readonly
 #
-# Read-only GitHub CLI queries. `gh api` is intentionally absent: with -f/-X it can write.
+# Read-only GitHub CLI queries: list / view / diff / status style subcommands only.
+# Deliberately absent:
+#   - `gh api`: with -f/-X it can write.
+#   - `gh auth status *`: `--show-token` prints the token. Only the bare form is allowed.
+#   - `gh pr checkout`, `gh run download`, `gh release download`: write to the working tree or disk.
+#   - `gh pr create/merge/close/comment/review`, `gh issue create/edit/close/comment`, `gh run rerun/cancel`,
+#     `gh workflow run`, `gh release create`, `gh repo create/delete/edit`: all mutate GitHub state.
 
+- {action: shell, resource: "gh --version", effect: allow}
+- {action: shell, resource: "gh auth status", effect: allow}
 - {action: shell, resource: "gh repo list *", effect: allow}
 - {action: shell, resource: "gh repo view *", effect: allow}
+- {action: shell, resource: "gh pr list *", effect: allow}
+- {action: shell, resource: "gh pr view *", effect: allow}
+- {action: shell, resource: "gh pr diff *", effect: allow}
+- {action: shell, resource: "gh pr checks *", effect: allow}
+- {action: shell, resource: "gh pr status *", effect: allow}
+- {action: shell, resource: "gh issue list *", effect: allow}
+- {action: shell, resource: "gh issue view *", effect: allow}
+- {action: shell, resource: "gh issue status *", effect: allow}
+- {action: shell, resource: "gh run list *", effect: allow}
+- {action: shell, resource: "gh run view *", effect: allow}
+- {action: shell, resource: "gh workflow list *", effect: allow}
+- {action: shell, resource: "gh workflow view *", effect: allow}
+- {action: shell, resource: "gh release list *", effect: allow}
+- {action: shell, resource: "gh release view *", effect: allow}
+- {action: shell, resource: "gh search *", effect: allow}
