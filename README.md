@@ -60,6 +60,8 @@ Rules use the V2 list format. `shell` rules are raw command text with `*` globs.
 | `git-sync` | 6 | `fetch`, `pull`, `clone`, `gh repo clone`. Moves data in; never pushes. |
 | `git-local-write` | 20 | `add`, `commit`, `init`, `mv`, `branch`, `tag`, `remote`, `archive`. See the note below. |
 | `github-readonly` | 19 | `gh` list/view/diff/checks/status for repos, PRs, issues, runs, workflows, releases, plus `gh search`. `gh api` and `gh auth status --show-token` are deliberately absent. |
+| `uv-readonly` | 35 | `uv` inspection: `--version`, `help`, `tree`, `pip list/freeze/show/check`, `python list/find/dir`, `tool list/dir`, `workspace`. `run`, `uvx`, `lock`, `export` and anything that builds or executes package code are deliberately absent. |
+| `uv-local-write` | 15 | Reversible local `uv` changes: `venv`, `init`, `python install/upgrade/pin/uninstall`, `cache clean/prune`. `add`, `sync`, `pip install` and `tool install` are deliberately absent (they can run build backends). |
 | `opencode-readonly` | 1 | `opencode api get *`. |
 | `external-directory-secrets` | 18 | Denies reads of `~/.ssh`, `~/.aws`, `~/.gnupg`, shell rc files, `.env`, tokens, ... |
 | `shell-hardening` | 27 | Denies `rm -r/-f`, `sudo`, `dd`, `mkfs`, `curl\|sh`, `sed -i`, `tee`, `find -exec/-delete`, redirects. **Include last.** |

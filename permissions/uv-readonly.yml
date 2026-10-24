@@ -1,0 +1,44 @@
+# uv-readonly
+#
+# Read-only uv inspection. Nothing here installs, builds or executes third-party code.
+# Deliberately absent (stay on ask):
+#   - `uv run`, `uvx`, `uv tool run`: execute arbitrary commands / downloaded packages.
+#   - `uv lock`, `uv export`, `uv audit`, `uv check`, `uv format`: resolve (may build sdists), hit the network
+#     or run downloaded tools.
+#   - `uv self *`, `uv auth *`, `uv publish`: modify the binary, touch credentials, upload.
+
+- {action: shell, resource: "uv --version", effect: allow}
+- {action: shell, resource: "uv -V", effect: allow}
+- {action: shell, resource: "uv --help", effect: allow}
+- {action: shell, resource: "uv help", effect: allow}
+- {action: shell, resource: "uv help *", effect: allow}
+- {action: shell, resource: "uv version", effect: allow}
+- {action: shell, resource: "uv version --short", effect: allow}
+- {action: shell, resource: "uv tree", effect: allow}
+- {action: shell, resource: "uv tree *", effect: allow}
+- {action: shell, resource: "uv pip list", effect: allow}
+- {action: shell, resource: "uv pip list *", effect: allow}
+- {action: shell, resource: "uv pip freeze", effect: allow}
+- {action: shell, resource: "uv pip freeze *", effect: allow}
+- {action: shell, resource: "uv pip show *", effect: allow}
+- {action: shell, resource: "uv pip check", effect: allow}
+- {action: shell, resource: "uv pip check *", effect: allow}
+- {action: shell, resource: "uv pip tree", effect: allow}
+- {action: shell, resource: "uv pip tree *", effect: allow}
+- {action: shell, resource: "uv python list", effect: allow}
+- {action: shell, resource: "uv python list *", effect: allow}
+- {action: shell, resource: "uv python find", effect: allow}
+- {action: shell, resource: "uv python find *", effect: allow}
+- {action: shell, resource: "uv python dir", effect: allow}
+- {action: shell, resource: "uv python dir *", effect: allow}
+- {action: shell, resource: "uv tool list", effect: allow}
+- {action: shell, resource: "uv tool list *", effect: allow}
+- {action: shell, resource: "uv tool dir", effect: allow}
+- {action: shell, resource: "uv tool dir *", effect: allow}
+- {action: shell, resource: "uv cache dir", effect: allow}
+- {action: shell, resource: "uv workspace list", effect: allow}
+- {action: shell, resource: "uv workspace list *", effect: allow}
+- {action: shell, resource: "uv workspace dir", effect: allow}
+- {action: shell, resource: "uv workspace dir *", effect: allow}
+- {action: shell, resource: "uv workspace metadata", effect: allow}
+- {action: shell, resource: "uv workspace metadata *", effect: allow}

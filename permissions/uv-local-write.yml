@@ -1,0 +1,23 @@
+# uv-local-write
+#
+# Local, reversible uv changes that do not install packages or run build backends or third-party code:
+# create a venv or project skeleton, pin/install/remove interpreters, clear the cache.
+# Deliberately absent (stay on ask, because they can execute build backends / package code):
+#   `uv add`, `uv remove`, `uv sync`, `uv lock`, `uv pip install`, `uv tool install`, `uv run`, `uvx`, `uv build`.
+# Also absent: `uv python update-shell` (edits shell rc files).
+
+- {action: shell, resource: "uv venv", effect: allow}
+- {action: shell, resource: "uv venv *", effect: allow}
+- {action: shell, resource: "uv init", effect: allow}
+- {action: shell, resource: "uv init *", effect: allow}
+- {action: shell, resource: "uv python install", effect: allow}
+- {action: shell, resource: "uv python install *", effect: allow}
+- {action: shell, resource: "uv python upgrade", effect: allow}
+- {action: shell, resource: "uv python upgrade *", effect: allow}
+- {action: shell, resource: "uv python pin", effect: allow}
+- {action: shell, resource: "uv python pin *", effect: allow}
+- {action: shell, resource: "uv python uninstall *", effect: allow}
+- {action: shell, resource: "uv cache clean", effect: allow}
+- {action: shell, resource: "uv cache clean *", effect: allow}
+- {action: shell, resource: "uv cache prune", effect: allow}
+- {action: shell, resource: "uv cache prune *", effect: allow}
